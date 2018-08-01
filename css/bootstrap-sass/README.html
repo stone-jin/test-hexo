@@ -21,7 +21,7 @@ gem <span class="string">'sass-rails'</span>, <span class="string">'&gt;= 3.2'</
 </code></pre>
 <p><code>bootstrap-sprockets</code> must be imported before <code>bootstrap</code> for the icon fonts to work.</p>
 <p>Make sure the file has <code>.scss</code> extension (or <code>.sass</code> for Sass syntax). If you have just generated a new Rails app,<br>it may come with a <code>.css</code> file instead. If this file exists, it will be served instead of Sass, so rename it:</p>
-<pre><code class="console"><span class="meta">$</span> mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
+<pre><code class="console"><span class="meta">$</span><span class="bash"> mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss</span>
 </code></pre>
 <p>Then, remove all the <code>*= require_self</code> and <code>*= require_tree .</code> statements from the sass file. Instead, use <code>@import</code> to import Sass files.</p>
 <p>Do not use <code>*= require</code> in Sass or your other stylesheets will not be <a href="https://github.com/twbs/bootstrap-sass/issues/79#issuecomment-4428595">able to access</a> the Bootstrap mixins or variables.</p>
@@ -53,7 +53,7 @@ config.assets.precompile &lt;&lt; <span class="regexp">%r(bootstrap-sass/assets/
 <h4 id="Rails-4-x"><a href="#Rails-4-x" class="headerlink" title="Rails 4.x"></a>Rails 4.x</h4><p>Please make sure <code>sprockets-rails</code> is at least v2.1.4.</p>
 <h4 id="Rails-3-2-x"><a href="#Rails-3-2-x" class="headerlink" title="Rails 3.2.x"></a>Rails 3.2.x</h4><p>bootstrap-sass is no longer compatible with Rails 3. The latest version of bootstrap-sass compatible with Rails 3.2 is v3.1.1.0.</p>
 <h3 id="b-Compass-without-Rails"><a href="#b-Compass-without-Rails" class="headerlink" title="b. Compass without Rails"></a>b. Compass without Rails</h3><p>Install the gem:</p>
-<pre><code class="console"><span class="meta">$</span> gem install bootstrap-sass
+<pre><code class="console"><span class="meta">$</span><span class="bash"> gem install bootstrap-sass</span>
 </code></pre>
 <p>If you have an existing Compass project:</p>
 <ol>
@@ -62,15 +62,15 @@ config.assets.precompile &lt;&lt; <span class="regexp">%r(bootstrap-sass/assets/
 </code></pre>
 </li>
 <li><p>Install Bootstrap with:</p>
-<pre><code class="console"><span class="meta">$</span> bundle exec compass install bootstrap -r bootstrap-sass
+<pre><code class="console"><span class="meta">$</span><span class="bash"> bundle <span class="built_in">exec</span> compass install bootstrap -r bootstrap-sass</span>
 </code></pre>
 </li>
 </ol>
 <p>If you are creating a new Compass project, you can generate it with bootstrap-sass support:</p>
-<pre><code class="console"><span class="meta">$</span> bundle exec compass create my-new-project -r bootstrap-sass --using bootstrap
+<pre><code class="console"><span class="meta">$</span><span class="bash"> bundle <span class="built_in">exec</span> compass create my-new-project -r bootstrap-sass --using bootstrap</span>
 </code></pre>
 <p>or, alternatively, if you’re not using a Gemfile for your dependencies:</p>
-<pre><code class="console"><span class="meta">$</span> compass create my-new-project -r bootstrap-sass --using bootstrap
+<pre><code class="console"><span class="meta">$</span><span class="bash"> compass create my-new-project -r bootstrap-sass --using bootstrap</span>
 </code></pre>
 <p>This will create a new Compass project with the following files in it:</p>
 <ul>
@@ -79,7 +79,7 @@ config.assets.precompile &lt;&lt; <span class="regexp">%r(bootstrap-sass/assets/
 </ul>
 <p>Some bootstrap-sass mixins may conflict with the Compass ones.<br>If this happens, change the import order so that Compass mixins are loaded later.</p>
 <h3 id="c-Bower"><a href="#c-Bower" class="headerlink" title="c. Bower"></a>c. Bower</h3><p>bootstrap-sass Bower package is compatible with node-sass 3.2.0+. You can install it with:</p>
-<pre><code class="console"><span class="meta">$</span> bower install bootstrap-sass
+<pre><code class="console"><span class="meta">$</span><span class="bash"> bower install bootstrap-sass</span>
 </code></pre>
 <p>Sass, JS, and all other assets are located at <a href="/assets">assets</a>.</p>
 <p>By default, <code>bower.json</code> main field list only the main <code>_bootstrap.scss</code> and all the static assets (fonts and JS).<br>This is compatible by default with asset managers such as <a href="https://github.com/taptapship/wiredep">wiredep</a>.</p>
@@ -93,7 +93,7 @@ config.assets.precompile &lt;&lt; <span class="regexp">%r(bootstrap-sass/assets/
 <pre><code class="js"><span class="comment">//= require bootstrap-sprockets</span>
 </code></pre>
 <p>See also this <a href="/test/dummy_node_mincer/manifest.js">example manifest.js</a> for mincer.</p>
-<h3 id="d-npm-Node-js"><a href="#d-npm-Node-js" class="headerlink" title="d. npm / Node.js"></a>d. npm / Node.js</h3><pre><code class="console"><span class="meta">$</span> npm install bootstrap-sass
+<h3 id="d-npm-Node-js"><a href="#d-npm-Node-js" class="headerlink" title="d. npm / Node.js"></a>d. npm / Node.js</h3><pre><code class="console"><span class="meta">$</span><span class="bash"> npm install bootstrap-sass</span>
 </code></pre>
 <h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a>Sass</h3><p>By default all of Bootstrap is imported.</p>
 <p>You can also import components explicitly. To start with a full list of modules copy<br><a href="assets/stylesheets/_bootstrap.scss"><code>_bootstrap.scss</code></a> file into your assets as <code>_bootstrap-custom.scss</code>.<br>Then comment out components you do not want from <code>_bootstrap-custom</code>.<br>In the application Sass file, replace <code>@import &#39;bootstrap&#39;</code> with:</p>
